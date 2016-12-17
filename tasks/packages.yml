@@ -1,0 +1,16 @@
+---
+- name: Install packages
+  apt: name={{item}} state=present update-cache=yes cache_valid_time=864000
+  become: true
+  with_items:
+    - mc
+    - vim
+    - nano
+    - man
+    - sudo
+    - tzdata
+    - python-software-properties
+    - software-properties-common
+    - htop
+    - curl
+    - wget

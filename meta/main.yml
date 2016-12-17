@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: bezrukovp
+  description: Common role of Ubuntu server
+  company:
+  license: MIT
+  min_ansible_version: 1.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+        - utopic
+        - vivid
+        - wily
+        - xenial
+        - yakkety
+    - name: Debian
+      versions:
+        - wheezy
+        - jessie
+  galaxy_tags:
+    - system
+dependencies: []

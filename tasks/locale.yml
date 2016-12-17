@@ -1,0 +1,14 @@
+---
+- name: Verify that the locale is available
+  locale_gen: name={{common_locale}} state=present
+  become: true
+
+- name: Set locale
+  template: src=locale.j2 dest=/etc/default/locale
+  become: true
+
+- name: Set timezone
+  copy: content={{common_timezone}} dest=/etc/timezone owner=root group=root mode=0644 backup=yes
+  become: true
+  notify:
+    - Timezone update
