@@ -8,7 +8,7 @@
   become: yes
 
 - name: Set timezone
-  copy: content={{common_timezone}} dest=/etc/timezone owner=root group=root mode=0644 backup=yes
+  copy: content={{common_timezone}} dest=/etc/timezone owner=root group=root mode=0644 force=no backup=yes
   become: yes
   notify:
     - Timezone update
