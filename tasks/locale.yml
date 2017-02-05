@@ -7,6 +7,16 @@
   template: src=locale.j2 dest=/etc/default/locale
   become: yes
 
+- name: Set localtime
+  file:
+    src: '/usr/share/zoneinfo/{{common_timezone}}'
+    dest: '/etc/localtime'
+    owner: root
+    group: root
+    state: link
+    force: no
+  become: yes
+
 - name: Set timezone
   copy: content={{common_timezone}} dest=/etc/timezone owner=root group=root mode=0644 force=no backup=yes
   become: yes
